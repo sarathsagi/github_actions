@@ -17,11 +17,13 @@ jobs:
             - name: Checkout code
               run: echo "Checkout Code"
               shell: bash
+
     get-github-context:
         runs-on: ubuntu-latest
         steps:
             - name: "Get GitHub context"
-              run: echo "${{ toJson(github.event) }}" | jq
+            - uses: peter-evans/create-or-update-comment@v2
+              run: echo '${{ toJson(github.event) }}' | jq
               shell: bash
 
 
