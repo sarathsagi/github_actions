@@ -1,0 +1,24 @@
+name: My First GitHub Action
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              run: echo "Checkout Code"
+              shell: bash
+                uses: actions/checkout@v2
+
+            - name: Build and test
+                run: echo "Build and test"
+                shell: bash
