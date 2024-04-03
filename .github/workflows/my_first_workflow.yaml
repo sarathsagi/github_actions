@@ -31,7 +31,7 @@ jobs:
             - name: Create Comment"
               uses: peter-evans/create-or-update-comment@v2
               with:
-                  comment_id: ${{ github.event.comment.id }}
+                  comment-id: ${{ github.event.comment.id }}
                   body: "Hello from the community action :sparkles:"
                   reactions: "+1"
 
