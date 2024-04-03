@@ -22,7 +22,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Get GitHub context"
-            - uses: peter-evans/create-or-update-comment@v2
               run: echo '${{ toJson(github.event) }}' | jq
               shell: bash
 
