@@ -1,4 +1,4 @@
-name: My First GitHub Action
+name: Community Action
 
 on:
     push:
@@ -10,20 +10,20 @@ on:
     workflow_dispatch:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - name: Checkout code
-              run: echo "Checkout Code"
-              shell: bash
+#     build:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - uses: actions/checkout@v2
+#             - name: Checkout code
+#               run: echo "Checkout Code"
+#               shell: bash
 
-    get-github-context:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Get GitHub context"
-              run: echo '${{ toJson(github.event) }}' | jq
-              shell: bash
+#     get-github-context:
+#         runs-on: ubuntu-latest
+#         steps:
+#             - name: "Get GitHub context"
+#               run: echo '${{ toJson(github.event) }}' | jq
+#               shell: bash
 
     community-action:
         runs-on: ubuntu-latest
@@ -31,7 +31,6 @@ jobs:
             - name: Create Comment"
               uses: peter-evans/create-or-update-comment@v2
               with:
-                  issue-number: ${{ github.event.issue.number }}
                   body: "Hello from the community action :sparkles:"
                   reactions: "+1"
 
